@@ -116,47 +116,49 @@
 
             <section class="section experiences-section">
                 <h2 class="section-title"><i class="fa fa-archive"></i>Research Statement</h2>
-                <div class="item">
-                    
-                    <div class="details">
-                        <section>
-                            <h4>Time-Series Analysis</h4>
-                            <p>I investigate the integration of multiple levels of time-series data—both <strong>fine-grained</strong> (e.g., transaction-level or tick data) and <strong>coarse-grained</strong> (e.g., daily summaries or aggregated statistics). The challenge lies in effectively combining these different types of data to leverage their complementary strengths, and my work develops novel techniques to incorporate them into unified models, leading to improved performance and more robust predictions.</p>
-                    
-                            <p>In addition to addressing granularity, I explore the power of <strong>cross-domain learning</strong>. Financial markets, healthcare, and other domains often share common underlying patterns, yet have domain-specific nuances. By capturing these general patterns and integrating relevant domain knowledge, I develop models that can transfer insights across domains. This approach enhances performance in data-scarce or noisy target domains and provides a way to apply learned knowledge from one area to another, creating more adaptable and versatile models.</p>
-                    
-                            <p>Beyond traditional predictive modeling, I place significant emphasis on <strong>time-series generation</strong>. Generative models play a crucial role in simulations, data augmentation, and scenario testing. My research focuses on generating time-series data that is not only realistic but also <strong>controllable</strong> and <strong>interactive</strong>. This means developing methods to produce data that can be tailored to specific domains and even adjusted based on particular requirements—be it for risk evaluation, testing, or forecasting with specific constraints.</p>
-                    
-                            <p>Finally, I emphasize <strong>interpretability</strong> in time-series models, ensuring transparency in how predictions are made, which is crucial for trust and application in high-stakes domains.</p>
-                        </section>
-                    </div><!--//details-->
-                </div><!--//item-->
-                <div class="item">
-                    <div class="meta">
+                    <div class="item">
+                     <div class="details">
+                            <section>
+                                <h4>Time-Series Analysis</h4>
+                                <p>My core research centers on <strong>time-series modeling</strong>, especially for irregular temporal data. I develop models capable of handling <strong>multi-frequency sequences</strong>, enabling improved forecasting, generation, and understanding across domains such as healthcare.</p>
+                                <p>I explore <strong>neural ODEs</strong>, <strong>frequency-aware Transformers</strong> to address temporal irregularity and heterogeneity, particularly in real-world data like EHR.</p>
+                                <p>In my recent work, I emphasize <strong>controllable time-series generation</strong> using diffusion-based models, combining textual prompts and structural constraints to create realistic, domain-specific synthetic sequences for simulation, augmentation, and stress testing.</p>
+                            </section>
+                        </div>
+                    </div>
+
+                <div class="meta">
                         <div class="upper-row">
                             <!--div class="time">2018.4 - 2019.2</div-->
                         </div><!--//upper-row-->
                     </div><!--//meta-->
+
+                    <div class="item">
                     <div class="details">
                         <section>
-                            <h4>AI in Finance</h4>
-                            <p>One of my core research areas is <strong>AI in finance</strong>, specifically in <strong>stock market modeling</strong>. The stock market presents a rich and challenging environment for machine learning, characterized by dynamic, high-dimensional, and sequential data. Modeling financial markets requires sophisticated techniques to capture temporal dependencies and fluctuations, which I address using <strong>sequential models</strong> such as Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTM) networks, and Transformers.</p>
-                            <p>In the context of financial data, two primary types of <strong>time-series data</strong> are crucial:</p>
-                            <ul>
-                                <li><strong>Price-Volume Data</strong>: This is <em>coarse-grained</em> data that captures overall market trends, including price movements and trading volumes. Predictive models built on this data are focused on identifying broader market trends and forecasting stock price fluctuations.</li>
-                                <li><strong>Order Book Data</strong>: This is <em>fine-grained</em> data representing real-time order book dynamics, detailing the bid-ask spreads, order flows, and market depth at different price levels. Models that process order book data require a higher level of granularity and are particularly useful for analyzing market microstructure and short-term price movements.</li>
-                            </ul>
-                            <p>In addition to time-series data, I also explore the integration of <strong>textual data</strong> such as financial news, reports, and social media sentiment. These data sources help uncover critical <strong>events</strong> and reveal the <strong>relationships between stocks</strong>, offering a richer context and more comprehensive predictions for market behavior. By incorporating these heterogeneous data sources, I aim to enhance the predictive power and robustness of financial models.</p>
-                            <p>The primary tasks of my research in finance focus on:</p>
-                            <ul>
-                                <li><strong>Prediction</strong>: Developing robust models that forecast stock price trends, market volatility, and financial risk based on historical and real-time data.</li>
-                                <li><strong>Generation</strong>: Building generative models that simulate realistic financial scenarios, improving market simulations and decision-making in uncertain environments.</li>
-                            </ul>
-                            <p>Through these efforts, my research seeks to bridge the gap between AI techniques and real-world financial applications, improving both predictive accuracy and model interpretability.</p>
+                            <h4>Foundation Models</h4>
+                            <p>My work emphasizes three pillars: massive domain‑focused pretraining, innovative architecture design, and real-world clinical deployment. Together, these designs aim to bridge the gap between foundation models and healthcare applications through robust, interpretable, and scalable solutions.</p>
+                            <p>I have led the development of two core foundation model projects:</p>
+                            <ul><strong>MIRA</strong> is a large-scale pre-trained model for irregular medical time-series data, incorporating Continuous-Time Rotary Positional Encoding (CT‑RoPE), frequency-specific Mixture‑of‑Experts, and Neural‑ODE based forecast blocks. </ul>
+                            <ul><strong>PULSAR</strong> focusing on summarizing clinician‑patient dialogues. It utilizes domain‑specific pretraining augmented with synthetic data and demonstrated SOTA performance in clinical note generation.</ul>
+                     
                         </section>
-                    
-                    </div><!--//details-->
-                </div><!--//item-->
+                    </div>
+                </div>
+                 <div class="meta">
+                        <div class="upper-row">
+                            <!--div class="time">2018.4 - 2019.2</div-->
+                        </div><!--//upper-row-->
+                    </div><!--//meta-->
+
+                        <div class="details">
+                            <section>
+                                <h4>Argument Mining</h4>
+                                <p>During the PhD, I conducted research in <strong>argument mining</strong> and <strong>natural language summarization</strong>, focusing on detecting, summarizing, and generating structured arguments from text. My work includes the creation of multi-task datasets for claim detection, evidence selection, and preference-based evaluation, as well as models that generate <strong>debate scripts</strong> via large language diffusion models.</p>
+                                <p>I am especially interested in how LLMs can model human argumentation with <strong>logical sufficiency, coherence, and persuasion</strong>. My research aims to advance both theoretical insights and practical tools for education, deliberation, and AI alignment with social reasoning.</p>
+                            </section>
+                        </div>
+                    </div>
 
     
             </section><!--//section-->
@@ -182,40 +184,16 @@
                     )
                     </h5>
                     <p class="subtitle-aux"><span class="bold">Topics:</span>
-                        <a href="#topic-finance" onClick="return publicationByTopicSpecific(this)" data-topic="AI-in-Finance">AI in Finance</a> /
+                        <a href="#topic-foundation-model" onClick="return publicationByTopicSpecific(this)" data-topic="Foundation-Model">Foundation Model</a> /
                         <a href="#topic-time-series" onClick="return publicationByTopicSpecific(this)" data-topic="time-series">Time-series Analysis</a> /
-                        <a href="#topic-generative-model" onClick="return publicationByTopicSpecific(this)" data-topic="generative-model">Generative Modeling</a> /
-                        <a href="#topic-sequential" onClick="return publicationByTopicSpecific(this)" data-topic="sequential-modeling">Sequential Modeling</a>
+                        <a href="#topic-healthcare" onClick="return publicationByTopicSpecific(this)" data-topic="healthcare">AI in Healthcare</a> /
+                        <a href="#topic-argument" onClick="return publicationByTopicSpecific(this)" data-topic="argument">Argument Mining</a>
                         <span class="note">(* indicates equal contribution)</span>
                     </p>
         
                     <div id="main-pub-card-container" class="hide">
                         
-                    
-
-                        <div class="pub-card" data-topic="time-series" data-year="2025" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/TarDiff.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">TarDiff: Target-Oriented Diffusion Guidance for Synthetic Electronic Health Record Time Series Generation</h5>
-                                        <h6 class="authors">
-                                            <a href="">Bowen Deng</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Hao Li</a>,
-                                            <a href="">Yu-Hao Huang</a>,
-                                            <a href="">Min Hou</a>,
-                                            <a href="">Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://arxiv.org/pdf/2504.17613">Preprint 2025</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="pub-card" data-topic="time-series" data-year="2025" data-selected="true">
                             <div class="row">
                                 <div class="col-l col-xs-12 col-lg-3">
@@ -225,9 +203,9 @@
                                     <div class="pub-card-body">
                                         <h5 class="title">BRIDGE: Bootstrapping Text to Control Time-Series Generation via Multi-Agent Iterative Optimization and Diffusion Modelling</h5>
                                         <h6 class="authors">
-                                            <a href="">Hao Li</a>,
+                                            <u>Hao Li</u>,
                                             <a href="">Yu-Hao Huang</a>,
-                                            <u>Chang Xu</u>,
+                                            <a href="">Chang Xu</a>,
                                             <a href="">Viktor Schlegel</a>,
                                             <a href="">Renhe Jiang</a>,
                                             <a href="">Riza Batista-Navarro </a>,
@@ -243,374 +221,29 @@
                             </div>
                         </div>
 
-                        <div class="pub-card" data-topic="time-series" data-year="2024" data-selected="true">
+                        <div class="pub-card" data-topic="time-series" data-year="2025" data-selected="true">
                             <div class="row">
                                 <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/Time-DP.png" width="100%" playsinline autoplay muted loop preload>
+                                    <img src="figures/TarDiff.png" width="100%" playsinline autoplay muted loop preload>
                                 </div>
                                 <div class="col-r col-xs-12 col-lg-9">
                                     <div class="pub-card-body">
-                                        <h5 class="title">TimeDP: Learning to Generate Multi-Domain Time Series with Domain Prompts</h5>
+                                        <h5 class="title">TarDiff: Target-Oriented Diffusion Guidance for Synthetic Electronic Health Record Time Series Generation</h5>
                                         <h6 class="authors">
+                                            <a href="">Bowen Deng</a>,
+                                            <a href="">Chang Xu</a>,
+                                            <u>Hao Li</u>,
                                             <a href="">Yu-Hao Huang</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Yueying Wu</a>,
-                                            <a href="">Wu-Jun Li</a>,
-                                            <a href="">Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://aaai.org/conference/aaai/aaai-25/" class="conference">AAAI 2025</a> /
-                                            <a href="https://arxiv.org/pdf/2501.05403">Paper</a> /
-                                            <a href="https://github.com/YukhoY/TimeDP">Code</a> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        <div class="pub-card" data-topic="time-series" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/TimeRAF.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">TimeRAF: Retrieval-Augmented Foundation model for Zero-shot Time Series Forecasting</h5>
-                                        <h6 class="authors">
-                                            <a href="">Huanyu Zhang</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Yi-Fan Zhang</a>,
-                                            <a href="">Zhang Zhang</a>,
-                                            <a href="">Liang Wang</a>,
-                                            <a href="">Jiang Bian</a>,
-                                            <a href="">Tieniu Tan</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://arxiv.org/pdf/2412.20810">Preprint 2024</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        <div class="pub-card" data-topic="generative-model" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/InvDiff.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">InvDiff: Invariant Guidance for Bias Mitigation in
-                                            Diffusion Models</h5>
-                                        <h6 class="authors">
-                                            <a href="">Min Hou*</a>,
-                                            <a >Yueying Wu*</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Yu-Hao Huang</a>,
-                                            <a href="">Xibai Chen</a>,
-                                            <a href="">Le Wu</a>,
-                                            <a href="">Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://www2025.thewebconf.org/" class="conference">KDD 2025</a> /
-                                            <a href="https://arxiv.org/pdf/2412.08480">Paper</a> /
-                                            <a href="https://github.com/Hundredl/InvDiff">Code</a> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/MarS.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">MarS: a Financial Market Simulation Engine Powered by Generative Foundation Model</h5>
-                                        <h6 class="authors">
-                                            <a href="">Junjie Li</a>,
-                                            <a href="">Yang Liu</a>,
-                                            <a href="">Weiqing Liu</a>,
-                                            <a href="">Shikai Fang</a>,
-                                            <a href="">Lewen Wang</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://arxiv.org/pdf/2409.07486">ICLR 2025</a> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/DiGA.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Controllable Financial Market Generation with Diffusion Guided Meta Agent</h5>
-                                        <h6 class="authors">
-                                            <a href="">Yu-Hao Huang</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Yang Liu</a>,
-                                            <a href="">Weiqing Liu</a>,
-                                            <a href="">Wu-Jun Li</a>,
-                                            <a href="">Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://arxiv.org/pdf/2408.12991">Preprint 2024</a> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/Digger-Guider.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Digger-Guider: High-Frequency Factor Extraction for Stock Trend Prediction</h5>
-                                        <h6 class="authors">
-                                            <a href="">Yang Liu</a>,
-                                            <u>Chang Xu</u>,
                                             <a href="">Min Hou</a>,
-                                            <a href="">Weiqing Liu</a>,
-                                            <a href="">Jiang Bian</a>,
-                                            <a href="">Qi Liu</a>,
-                                            <a href="">Tie-Yan Liu</a>
+                                            <a href="">Jiang Bian</a>
                                         </h6>
                                         <p class="info">
-                                            <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" class="conference">IEEE TKDE</a> /
-                                            <a href="public/Digger_Guider_TKDE.pdf">Paper</a> 
+                                            <a href="https://arxiv.org/pdf/2504.17613">Preprint 2025</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="pub-card" data-topic="sequential-modeling" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/pedestrain.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">A multimodal stepwise-coordinating framework for pedestrian trajectory prediction</h5>
-                                        <h6 class="authors">
-                                            <a href="">Yijun Wang</a>,
-                                            <a href="">Zekun Guo</a>,
-                                            <u>Chang Xu</u>,
-                                            <a href="">Jianxin Lin</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://www.sciencedirect.com/journal/knowledge-based-systems" class="conference">Knowledge-based Systems</a> /
-
-                                            <a href="public/pedestrain-trajectory.pdf">Paper</a> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="time-series" data-year="2024" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/MG-TSD.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">MG-TSD: Multi-granularity time series diffusion models with guided learning process</h5>
-                                        <h6 class="authors">
-                                            <a>Xinyao Fan</a>,
-                                            <a>Yueying Wu</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Yuhao Huang</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <a>Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://iclr.cc/virtual/2024/poster/19169">ICLR 2024</a> /
-                                            <a href="https://arxiv.org/pdf/2403.05751">Paper</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2023" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/microstructure-empowered.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Microstructure-Empowered Stock Factor Extraction and Utilization</h5>
-                                        <h6 class="authors">
-                                            <a>Xianfeng Jiao</a>,
-                                            <a>Zizhong Li</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Yang Liu</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <a>Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://arxiv.org/pdf/2308.08135">Preprint 2023</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2023" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/deep-calibration.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Efficient Behavior-consistent Calibration for Multi-agent Market Simulation</h5>
-                                        <h6 class="authors">
-                                            <a>Tianlang He</a>,
-                                            <a>Keyan Lu</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Yang Liu</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <a>S-H Gary Chan</a>,
-                                            <a>Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://arxiv.org/pdf/2307.12987">Preprint 2023</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="time-series" data-year="2022" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/differential-operators.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Learning differential operators for interpretable time series modeling</h5>
-                                        <h6 class="authors">
-                                            <a>Yingtao Luo</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Yang Liu</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <a>Shun Zheng</a>,
-                                            <a>Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://kdd.org/kdd2022/">KDD 2022</a> /
-                                            <a href="https://dl.acm.org/doi/pdf/10.1145/3534678.3539245">Paper</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="time-series" data-year="2022" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/multi-granularity.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Multi-granularity residual learning with confidence estimation for time series prediction</h5>
-                                        <h6 class="authors">
-                                            <a>Min Hou</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Zhi Li</a>,
-                                            <a>Yang Liu</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <a>Enhong Chen</a>,
-                                            <a>Jiang Bian</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3485447.3512056">WWW 2022</a> /
-                                            <a href="https://scholar.archive.org/work/mxewhc6vufbhxjrl3gmxj646zy/access/wayback/https://dl.acm.org/doi/pdf/10.1145/3485447.3512056">Paper</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2021" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/stock-trend-prediction.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Stock trend prediction with multi-granularity data: A contrastive learning approach with adaptive fusion</h5>
-                                        <h6 class="authors">
-                                            <a>Min Hou</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Yang Liu</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <a>Jiang Bian</a>,
-                                            <a>Le Wu</a>,
-                                            <a>Zhi Li</a>,
-                                            <a>Enhong Chen</a>,
-                                            <a>Tie-Yan Liu</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3459637.3482483">CIKM 2021</a> / 
-                                            <a href="https://bigdata.ustc.edu.cn/paper_pdf/2021/Min-Hou-CIKM.pdf">Paper</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pub-card" data-topic="AI-in-Finance" data-year="2021" data-selected="true">
-                            <div class="row">
-                                <div class="col-l col-xs-12 col-lg-3">
-                                    <img src="figures/rest.png" width="100%" playsinline autoplay muted loop preload>
-                                </div>
-                                <div class="col-r col-xs-12 col-lg-9">
-                                    <div class="pub-card-body">
-                                        <h5 class="title">Rest: Relational event-driven stock trend forecasting</h5>
-                                        <h6 class="authors">
-                                            <a>Wentao Xu</a>,
-                                            <a>Weiqing Liu</a>,
-                                            <u>Chang Xu</u>,
-                                            <a>Jiang Bian</a>,
-                                            <a>Jian Yin</a>,
-                                            <a>Tie-Yan Liu</a>
-                                        </h6>
-                                        <p class="info">
-                                            <a href="https://dl.acm.org/doi/abs/10.1145/3442381.3450032">WWW 2021</a> /
-                                            <a href="https://arxiv.org/pdf/2102.07372">Paper</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
 
 
                 
