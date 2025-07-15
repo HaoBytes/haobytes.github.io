@@ -112,53 +112,12 @@
 
 
 
-            <style>
-  .research-box {
-    margin-bottom: 1em;
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    background-color: #fafafa;
-    overflow: hidden;
-    max-height: 60px;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .research-box:hover {
-    max-height: 500px; /* expand */
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-
-  .research-box h4 {
-    margin-top: 0;
-  }
-
-  .research-keywords {
-    font-style: italic;
-    color: #666;
-  }
-
-  .research-content {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    max-height: 0;
-  }
-
-  .research-box:hover .research-content {
-    opacity: 1;
-    max-height: 1000px;
-  }
-</style>
-
 <section class="section experiences-section">
   <h2 class="section-title"><i class="fa fa-archive"></i>Research Statement</h2>
 
   <div class="research-box">
     <h4>Foundation Models</h4>
-    <div class="research-keywords">keywords: generalization, sparse experts, temporal + multimodal pretraining</div>
+    <div class="research-keywords">Keywords: Pretraining Objectives Design, Training Policy, AI Agent</div>
     <div class="research-content">
       <p>My core research focuses on foundation models that generalize across tasks, datasets, and modalities. I emphasize building scalable architectures with modular components, such as sparse experts, continuous-time position embeddings, and adaptive attention, that enable forecasting, generation, and decision-making from temporal, textual, and multimodal inputs...</p>
     </div>
@@ -166,7 +125,7 @@
 
   <div class="research-box">
     <h4>Time-Series Analysis</h4>
-    <div class="research-keywords">keywords: irregularity, forecasting, long-range dependencies</div>
+    <div class="research-keywords">Keywords: Irregularity, Forecasting, Generation, Diffusion Modeling</div>
     <div class="research-content">
       <p>My research on time-series modeling focuses on learning from irregular temporal data. I am interested in developing models that can robustly handle multivariate dynamics, long-range dependencies, and missing values...</p>
     </div>
@@ -174,7 +133,7 @@
 
   <div class="research-box">
     <h4>AI for Healthcare</h4>
-    <div class="research-keywords">keywords: EHR, interpretability, clinical decision support</div>
+    <div class="research-keywords">Keywords: EHR, Interpretability, Clinical decision support</div>
     <div class="research-content">
       <p>I am committed to developing AI systems that can support clinical understanding, decision-making, and care planning. My research focuses on learning from real-world medical data—especially electronic health records (EHR), longitudinal time-series, and clinical narratives...</p>
     </div>
@@ -182,7 +141,7 @@
 
   <div class="research-box">
     <h4>Multimodal Large Language Models</h4>
-    <div class="research-keywords">keywords: vision-language models, token compression, cross-modal reasoning</div>
+    <div class="research-keywords">keywords: Vision-language models, Token Compression, Cross-modal Reasoning</div>
     <div class="research-content">
       <p>My research in multimodal large language models focuses on improving how language models interact with visual inputs, such as images and videos. I explore the design of architectures and adaptation strategies that allow LLMs to efficiently process and reason over visual content...</p>
     </div>
@@ -190,7 +149,7 @@
 
   <div class="research-box">
     <h4>Argument Mining</h4>
-    <div class="research-keywords">keywords: claim detection, key point analysis, summarization</div>
+    <div class="research-keywords">Keywords: Key Point Analysis, Text Summarization</div>
     <div class="research-content">
       <p>My research in argument mining centers on understanding how people express reasoning, claims, and evidence in natural language. I work on building systems that can identify argumentative components, extract key points, and generate structured summaries or persuasive texts...</p>
     </div>
@@ -327,6 +286,53 @@
             
         </div><!--//main-body-->
     </div>
+
+    <style>
+  .research-box {
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    overflow: hidden;
+    max-height: 80px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .research-box:hover {
+    max-height: 500px; /* expand */
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .research-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .research-keywords {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.75em;
+  }
+
+  .research-content {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    max-height: 0;
+    line-height: 1.6;
+  }
+
+  .research-box:hover .research-content {
+    opacity: 1;
+    max-height: 1000px;
+  }
+</style>
 
  
     <!-- Javascript -->          
