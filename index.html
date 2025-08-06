@@ -117,41 +117,41 @@
 
   <div class="research-box">
     <h4>Foundation Models</h4>
-    <div class="research-keywords">Keywords: Pretraining Objectives Design, Architecture Design, AI Agent</div>
+    <div class="research-keywords">Keywords: Pretraining, Modular Architectures, Generalization across Modalities</div>
     <div class="research-content">
-      <p>My core research focuses on foundation models that generalize across tasks, datasets, and modalities. I emphasize building scalable architectures with modular components, such as sparse experts, continuous-time position embeddings, and adaptive attention, that enable forecasting, generation, and decision-making from temporal, textual, and multimodal inputs...</p>
+      <p>My core research focuses on developing foundation models that generalize across tasks, modalities, and domains. I explore modular architectures—such as sparse experts, adaptive attention, and continuous-time representations—that can support forecasting, reasoning, and generation across diverse data types including time-series, images, and texts.</p>
     </div>
   </div>
 
   <div class="research-box">
-    <h4>Time-Series Analysis</h4>
-    <div class="research-keywords">Keywords: Irregularity, Forecasting, Generation, Diffusion Modeling</div>
+    <h4>Generative Modelling</h4>
+    <div class="research-keywords">Keywords: Diffusion Models, Controllable Generation, Text-to-Time Series</div>
     <div class="research-content">
-      <p>My research on time-series modeling focuses on learning from irregular temporal data. I am interested in developing models that can robustly handle multivariate dynamics, long-range dependencies, and missing values...</p>
+      <p>I design generative systems that synthesize structured data such as multivariate time series or clinical signals from natural language. My work includes diffusion-based models that allow fine-grained control over the output, enabling precise and faithful generation for simulation, augmentation, and decision support.</p>
     </div>
   </div>
 
   <div class="research-box">
-    <h4>AI for Healthcare</h4>
-    <div class="research-keywords">Keywords: EHR, Interpretability, Clinical decision support</div>
+    <h4>Health AI</h4>
+    <div class="research-keywords">Keywords: EHR, Medical Time Series, Clinical Decision Support</div>
     <div class="research-content">
-      <p>I am committed to developing AI systems that can support clinical understanding, decision-making, and care planning. My research focuses on learning from real-world medical data—especially electronic health records (EHR), longitudinal time-series, and clinical narratives...</p>
+      <p>I work on building trustworthy AI systems for healthcare, with a particular focus on modeling real-world clinical data such as EHRs, physiological signals (e.g., ECG), and longitudinal records. My research aims to support clinical reasoning, outcome prediction, and health system optimization.</p>
     </div>
   </div>
 
   <div class="research-box">
-    <h4>Multimodal Large Language Models</h4>
-    <div class="research-keywords">keywords: Vision-language models, Token Compression, Cross-modal Reasoning</div>
+    <h4>LLM Evaluation & Attribution</h4>
+    <div class="research-keywords">Keywords: Zero-shot Evaluation, Stability, Influence Functions</div>
     <div class="research-content">
-      <p>My research in multimodal large language models focuses on improving how language models interact with visual inputs, such as images and videos. I explore the design of architectures and adaptation strategies that allow LLMs to efficiently process and reason over visual content...</p>
+      <p>I investigate how large language models perform across tasks, domains, and inputs, with a focus on robustness and attribution. My work includes instance-level analysis of LLM behavior, tracing dataset influence on model predictions, and identifying failure modes in biomedical or instruction-following settings.</p>
     </div>
   </div>
 
   <div class="research-box">
-    <h4>Argument Mining</h4>
-    <div class="research-keywords">Keywords: Key Point Analysis, Text Summarization</div>
+    <h4>Cross-modal Representation Learning</h4>
+    <div class="research-keywords">Keywords: Vision-Language Alignment, Knowledge Distillation, Multimodal Understanding</div>
     <div class="research-content">
-      <p>My research in argument mining centers on understanding how people express reasoning, claims, and evidence in natural language. I work on building systems that can identify argumentative components, extract key points, and generate structured summaries or persuasive texts...</p>
+      <p>I study how representations can be aligned across modalities—such as language, vision, and structured signals—to enable joint reasoning and transfer. My work explores cross-modal distillation, token pruning, and contrastive alignment for both general-purpose LLMs and medical multimodal applications.</p>
     </div>
   </div>
 </section>
@@ -171,17 +171,18 @@
     </h5>
 
     <p class="subtitle-aux"><span class="bold">Topics:</span>
-      <a href="#topic-foundation-model" onclick="return publicationByTopicSpecific(this)" data-topic="Foundation-Model">Foundation Model</a> /
-      <a href="#topic-time-series" onclick="return publicationByTopicSpecific(this)" data-topic="time-series">Time-series Analysis</a> /
-      <a href="#topic-healthcare" onclick="return publicationByTopicSpecific(this)" data-topic="healthcare">AI in Healthcare</a> /
-      <a href="#topic-multi-modal" onclick="return publicationByTopicSpecific(this)" data-topic="multi-modal">Multimodal Large Language Models</a> /
-      <a href="#topic-argument" onclick="return publicationByTopicSpecific(this)" data-topic="argument">Argument Mining</a>
+      <a href="#topic-foundation-model" onclick="return publicationByTopicSpecific(this)" data-topic="foundation-model">Foundation Model</a> /
+      <a href="#topic-time-series" onclick="return publicationByTopicSpecific(this)" data-topic="generative-modelling">Generative Modelling</a> /
+      <a href="#topic-healthcare" onclick="return publicationByTopicSpecific(this)" data-topic="health-ai">Health AI</a> /
+      <a href="#topic-multi-modal" onclick="return publicationByTopicSpecific(this)" data-topic="llm-eval-attribution">LLM Evaluation & Attribution</a> /
+      <a href="#topic-argument" onclick="return publicationByTopicSpecific(this)" data-topic="multimodal-learning">Cross-modal Representation Learning</a>
+         <a href="#topic-argument" onclick="return publicationByTopicSpecific(this)" data-topic="nlp">NLP & Argument Mining</a>
       <span class="note">(* indicates equal contribution)</span>
     </p>
 
     <div id="main-pub-card-container" class="hide">
 
-        <div class="pub-card" data-topic="Foundation-Model" data-year="2025" data-selected="true">
+        <div class="pub-card" data-topic="foundation-model" data-year="2025" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/MIRA.jpg" width="100%" alt="MIRA">
@@ -200,7 +201,7 @@
         </div>
       </div>
         
-      <div class="pub-card" data-topic="time-series" data-year="2025" data-selected="true">
+      <div class="pub-card" data-topic="generative-modelling" data-year="2025" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/BRIDGE.jpeg" width="100%" alt="BRIDGE">
@@ -220,7 +221,7 @@
         </div>
       </div>
 
-      <div class="pub-card" data-topic="time-series" data-year="2025" data-selected="true">
+      <div class="pub-card" data-topic="generative-modelling" data-year="2025" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/TarDiff.png" width="100%" alt="TarDiff">
@@ -240,7 +241,26 @@
         </div>
       </div>
 
-    <div class="pub-card" data-topic="multi-modal" data-year="2025" data-selected="true">
+    <div class="pub-card" data-topic="foundation-model" data-year="2025" data-selected="true">
+        <div class="row">
+          <div class="col-l col-xs-12 col-lg-3">
+            <img src="figures/MIRA.jpg" width="100%" alt="AGENT">
+          </div>
+          <div class="col-r col-xs-12 col-lg-9">
+            <div class="pub-card-body">
+              <h5 class="title">Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training</h5>
+              <h6 class="authors">
+                 <a href="">Kailai Yang</a>, <a href="">Xiao Liu</a>, <a href="">Lei Ji</a>, <u>Hao Li</u>, <a href="">Yeyun Gong</a>, <a href="">Peng Cheng</a>, <a href="">Mao Yang</a>
+              </h6>
+              <p class="info">
+                <a href="https://arxiv.org/abs/2506.07584">Preprint 2025</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="pub-card" data-topic="multimodal-learning" data-year="2025" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/accelerated.png" style="width:100%; max-height:120px; object-fit: contain;" alt="accelerated">
@@ -259,7 +279,7 @@
         </div>
       </div>
 
-    <div class="pub-card" data-topic="multi-modal" data-year="2025" data-selected="true">
+    <div class="pub-card" data-topic="multimodal-learning" data-year="2025" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/lvpruning.png" style="width:100%; max-height:120px; object-fit: contain;" alt="lvpruning">
@@ -279,7 +299,7 @@
         </div>
       </div>
 
-    <div class="pub-card" data-topic="healthcare" data-year="2025" data-selected="true">
+    <div class="pub-card" data-topic="health-ai" data-year="2025" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/DSP.png" style="width:100%; max-height:120px; object-fit: contain;" alt="DSP">
@@ -299,7 +319,7 @@
         </div>
       </div>
 
-    <div class="pub-card" data-topic="argument" data-year="2024" data-selected="true">
+    <div class="pub-card" data-topic="llm-eval-attribution" data-year="2024" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/dataset.png" width="100%" alt="dataset">
@@ -320,7 +340,7 @@
         </div>
       </div>
 
-    <div class="pub-card" data-topic="multi-modal" data-year="2024" data-selected="true">
+    <div class="pub-card" data-topic="llm-eval-attribution" data-year="2024" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/cif-bench.png" width="100%" alt="cif-bench">
@@ -343,7 +363,7 @@
         </div>
       </div>
 
-    <div class="pub-card" data-topic="argument" data-year="2023" data-selected="true">
+    <div class="pub-card" data-topic="nlp" data-year="2023" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/kpa.png" style="width:100%; max-height:120px; object-fit: contain;" alt="KPA">
@@ -363,7 +383,7 @@
         </div>
       </div>
 
-        <div class="pub-card" data-topic="argument" data-year="2023" data-selected="true">
+        <div class="pub-card" data-topic="nlp" data-year="2023" data-selected="true">
         <div class="row">
           <div class="col-l col-xs-12 col-lg-3">
             <img src="figures/thrain.png" width="100%" alt="thrain">
