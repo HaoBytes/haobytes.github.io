@@ -17,8 +17,8 @@
         body, html {
             margin: 0; padding: 0;
             width: 100%; height: 100%;
-            overflow: hidden; 
-            background-color: #050505; 
+            overflow: hidden; /* 初始状态锁定滚动 */
+            background-color: #050505; /* 3D 背景底色 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -29,6 +29,7 @@
             z-index: 1;
         }
 
+        /* Hero 区域居中布局 */
         #hero {
             position: relative;
             z-index: 10;
@@ -42,25 +43,16 @@
         }
 
         #hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            margin: 0 0 15px 0;
-        }
-
-        /* 新增：常规身份介绍文字 */
-        .role-text {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            color: #dddddd;
-            margin-bottom: 15px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 200;
+            letter-spacing: 0.1em;
+            margin: 0 0 20px 0;
         }
 
         .subtitle-container {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #888;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             height: 1.5em;
             letter-spacing: 0.05em;
             font-weight: 300;
@@ -107,22 +99,23 @@
         
         #main-content {
             position: absolute;
-            top: 100vh; 
+            top: 100vh; /* 初始隐藏在屏幕正下方 */
             left: 0;
             width: 100%;
             min-height: 100vh;
             z-index: 20;
-            background-color: #fdfdf6; 
-            display: none; 
+            background-color: #fdfdf6; /* 米白纸质背景 */
+            display: none; /* 初始不渲染 */
         }
 
+        /* 将原来的 body 样式转移给 content-inner 容器 */
         .content-inner {
             font-family: 'Georgia', 'Times New Roman', Times, serif;
             color: #2c2c2c;
             line-height: 1.6;
             max-width: 860px; 
             margin: 0 auto; 
-            padding: 60px 20px 100px 20px; 
+            padding: 60px 20px 100px 20px; /* 增加一点顶部内边距 */
         }
 
         .content-inner a {
@@ -236,8 +229,7 @@
     <div id="canvas-container"></div>
 
     <section id="hero">
-        <h1>Hi! I'm Hao Li</h1>
-        <div class="role-text">Researcher at ERNIE Team, Baidu</div>
+        <h1>Hao Li</h1>
         <div class="subtitle-container">
             Specialized in <span id="typewriter-text"></span><span class="cursor">|</span>
         </div>
@@ -431,7 +423,7 @@
             <div class="paper">
                 <div class="paper-title">CIF-Bench: A Chinese Instruction-Following Benchmark for Evaluating the Generalizability of Large Language Models</div>
                 <div class="paper-authors">
-                    Yizhi Li, Ge Zhang, Xingwei Qu, Jiali Li, Zhaoqun Li, Zekun Wang, <span class="me">Hao Li</span>, Ruibin Yuan, Yinghao Ma, Kai পুনরায়Zhang, Wangchunshu Zhou, Yiming Liang, Lei Zhang, Lei Ma, Jiajun Zhang, Zuowen Li, Stephen W Huang, Chenghua Lin, Wenhu Chen, Jie Fu
+                    Yizhi Li, Ge Zhang, Xingwei Qu, Jiali Li, Zhaoqun Li, Zekun Wang, <span class="me">Hao Li</span>, Ruibin Yuan, Yinghao Ma, Kai Zhang, Wangchunshu Zhou, Yiming Liang, Lei Zhang, Lei Ma, Jiajun Zhang, Zuowen Li, Stephen W Huang, Chenghua Lin, Wenhu Chen, Jie Fu
                 </div>
                 <div class="paper-venue">ACL 2024 Findings</div>
                 <div>[<a href="https://arxiv.org/abs/2402.13109">Paper</a>] [<a href="https://github.com/yizhilll/CIF-Bench">Code</a>]</div>
@@ -510,8 +502,7 @@
         animate();
 
         /** 2. 打字机特效 **/
-        // 已按要求更新为你指定的词组
-        const words = ["Reinforcement Learning.", "AI Agent."];
+        const words = ["Reinforcement Learning.", "Post-training.", "Foundation Models.", "Agentic RL."];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
         const typeTarget = document.getElementById("typewriter-text");
 
@@ -561,10 +552,11 @@
             }, "-=0.8")
             .set(mainContent, { display: 'block' })
             .to(mainContent, {
-                top: 0, 
+                top: 0, /* 核心逻辑：原本在下方的白色网页，像幕布一样被拉上来 */
                 duration: 1.2,
                 ease: "expo.out",
                 onComplete: () => {
+                    // 转场完成后，解开页面的滚动锁定
                     document.body.style.overflowY = 'auto'; 
                     document.documentElement.style.overflowY = 'auto';
                 }
