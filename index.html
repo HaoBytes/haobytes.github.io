@@ -26,9 +26,9 @@
             position: fixed;
             top: 0; left: 0;
             width: 100vw; height: 100vh;
-            z-index: -1;
-            /* 👇 关键修改：加上了 ./ 表示从当前目录开始找 */
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+            /* 👇 核心修复：把 -1 改成 1，确保它在黑色背景之上 */
+            z-index: 1; 
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
                               url('./attached/museum-of-new-zealand-te-papa-tongarewa-e-3PPyd1U2g-unsplash.jpg');
             background-size: cover;
             background-position: center;
@@ -48,6 +48,8 @@
             text-align: center;
             color: #ffffff;
             position: relative;
+            /* 👇 核心修复：文字图层设为 2，确保在画之上 */
+            z-index: 2; 
         }
 
         #hero h1 {
@@ -114,6 +116,7 @@
 
         #main-content {
             position: relative;
+            /* 👇 保持 10，往下滑时完美盖住下面的 1 和 2 */
             z-index: 10;
             background-color: #fdfdf6; 
             min-height: 100vh;
