@@ -50,7 +50,7 @@
         }
 
         #hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem); 
+            font-size: clamp(2rem, 5vw, 3.2rem); 
             font-weight: 300;
             letter-spacing: 0.15em;
             margin: 0 0 15px 0;
@@ -157,72 +157,33 @@
             margin-bottom: 60px;
         }
 
-        .bio-text {
-            flex: 1;
-            font-size: 1.1em;
-        }
-
+        .bio-text { flex: 1; font-size: 1.1em; }
         .profile-photo {
-            width: 200px;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
-            flex-shrink: 0;
+            width: 200px; height: auto; border-radius: 4px;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.1); flex-shrink: 0;
         }
 
         @media (max-width: 768px) {
-            .bio-container {
-                flex-direction: column-reverse;
-                align-items: center;
-                text-align: center;
-            }
-            .profile-photo {
-                margin-bottom: 20px;
-                width: 160px;
-            }
+            .bio-container { flex-direction: column-reverse; align-items: center; text-align: center; }
+            .profile-photo { margin-bottom: 20px; width: 160px; }
         }
 
         .content-inner h2 {
-            font-size: 1.4em;
-            font-weight: bold;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            color: #8b0000; 
+            font-size: 1.4em; font-weight: bold; margin-top: 50px;
+            margin-bottom: 20px; color: #8b0000; 
         }
 
-        .work-institution {
-            font-size: 0.95em;
-            color: #666;       
-            margin-top: 2px;
-            margin-bottom: 6px;
-            font-family: 'Inter', sans-serif; 
-        }
-
+        .work-institution { font-size: 0.95em; color: #666; margin-top: 2px; margin-bottom: 6px; font-family: 'Inter', sans-serif; }
         .stat-badge {
-            display: inline-block;
-            padding: 2px 8px;
-            margin-right: 6px;
-            margin-bottom: 4px;
-            font-size: 0.85em;
-            font-weight: 600;
-            color: #333;
-            background-color: #fff;       
-            border: 1px solid #e5e5e5;    
-            border-radius: 6px;           
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
+            display: inline-block; padding: 2px 8px; margin-right: 6px; margin-bottom: 4px;
+            font-size: 0.85em; font-weight: 600; color: #333; background-color: #fff;
+            border: 1px solid #e5e5e5; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
             font-family: 'Inter', sans-serif;
         }
-
         .badge-highlight { background-color: #fff8e1; border-color: #ffe082; color: #b00020; }
         .badge-blue { background-color: #f0f7ff; border-color: #cce5ff; color: #004085; }
 
-        .icon-svg {
-            width: 14px; height: 14px;
-            fill: currentColor; 
-            vertical-align: -2px; 
-            margin-right: 4px;    
-        }
-
+        .icon-svg { width: 14px; height: 14px; fill: currentColor; vertical-align: -2px; margin-right: 4px; }
         .paper { margin-bottom: 30px; }
         .paper-title { font-weight: bold; color: #000; }
         .paper-authors { color: #444; margin-top: 2px; }
@@ -248,37 +209,18 @@
     <section id="main-content">
         <div class="content-inner">
             
-            <div class="name-header">
-                <h1>Hao Li (李昊)</h1>
-            </div>
-
+            <div class="name-header"><h1>Hao Li (李昊)</h1></div>
             <hr class="separator">
 
             <div class="bio-container">
                 <div class="bio-text">
-                    <p style="margin-top: 0;">
-                        I‘m a Member of Technical Staff @ <a href="https://ernie.baidu.com/">ERNIE Team</a>, Baidu. 
-                    </p>
-                    <p>
-                        Prior to this, I was a Post-doc @ <a href="https://www.imperial.ac.uk/">Imperial College London</a> 
-                        and Research Intern @ <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia-zh-cn/">Microsoft Research</a> 
-                    </p>
-                    <p> 
-                        My research interests lie in <b>Post-training</b> and <b>Reinforcement Learning</b>. 
-                        Recently, I have been focusing on:
-                    </p>
-                    <ul>
-                        <li>Agentic RL & Reward Modeling</li>
-                        <li>Training-Inference Mismatch</li>
-                        <li>On-policy Distillation</li>
-                    </ul>
-                    
+                    <p style="margin-top: 0;">I‘m a Member of Technical Staff @ <a href="https://ernie.baidu.com/">ERNIE Team</a>, Baidu.</p>
+                    <p>Prior to this, I was a Post-doc @ <a href="https://www.imperial.ac.uk/">Imperial College London</a> and Research Intern @ <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia-zh-cn/">Microsoft Research</a></p>
+                    <p>My research interests lie in <b>Post-training</b> and <b>Reinforcement Learning</b>. Recently, focusing on:</p>
+                    <ul><li>Agentic RL & Reward Modeling</li><li>Training-Inference Mismatch</li><li>On-policy Distillation</li></ul>
                     <p style="margin-top: 25px;">
-                        <a href="mailto:lihao950220@hotmail.com">Email</a> / 
-                        <a href="https://www.linkedin.com/in/haoli-harry/">LinkedIn</a> / 
-                        <a href="attached/Hao's CV.pdf">CV</a> / 
-                        <a href="https://scholar.google.com/citations?user=yZjmYegAAAAJ&hl=en">Google Scholar</a> / 
-                        <a href="https://github.com/HaoBytes">GitHub</a>
+                        <a href="mailto:lihao950220@hotmail.com">Email</a> / <a href="https://www.linkedin.com/in/haoli-harry/">LinkedIn</a> / 
+                        <a href="https://scholar.google.com/citations?user=yZjmYegAAAAJ&hl=en">Google Scholar</a> / <a href="https://github.com/HaoBytes">GitHub</a>
                     </p>
                 </div>
                 <img src="attached/myself.jpg" alt="My Photo" class="profile-photo">
@@ -304,9 +246,7 @@
                 <div class="work-institution">ERNIE Team, Baidu</div>
                 <div style="margin-top: 2px;">
                     <span class="stat-badge badge-blue"><svg class="icon-svg" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg> 7.6k+ Stars</span>
-                    <span class="stat-badge">👥 430M+ Users</span>
-                    <span class="stat-badge">🚀 1.5B Daily Calls</span>
-                    <span class="stat-badge">🤗 28B-424B LLM</span>
+                    <span class="stat-badge">👥 430M+ Users</span><span class="stat-badge">🚀 1.5B Daily Calls</span>
                 </div>
                 <div style="margin-top: 4px;">
                     [<a href="https://github.com/PaddlePaddle/ERNIE">GitHub</a>] [<a href="https://huggingface.co/baidu/ERNIE-4.5-21B-A3B-Thinking">Hugging Face</a>] [<a href="https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf">Technical Report</a>]
@@ -316,9 +256,7 @@
             <div class="paper">
                 <div class="paper-title"><a href="https://github.com/microsoft/TimeCraft">TimeCraft: Universal Time-Series Generation</a></div>
                 <div class="work-institution">Microsoft Research</div>
-                <div style="margin-top: 2px;">
-                     <span class="stat-badge badge-blue">1.1k+ Stars</span>
-                </div>
+                <div style="margin-top: 2px;"><span class="stat-badge badge-blue">1.1k+ Stars</span></div>
                 <div style="margin-top: 4px;">
                     [<a href="https://www.microsoft.com/en-us/research/articles/timecraft-a-universal-framework-for-time-series-generation/">Blog</a>] [<a href="https://github.com/microsoft/TimeCraft">GitHub</a>] [<a href="https://www.microsoft.com/en-us/research/articles/timecraft-a-universal-framework-for-time-series-generation/">Technical Report</a>]
                 </div>
@@ -328,77 +266,77 @@
 
             <div class="paper">
                 <div class="paper-title">Arg-LLaDA: Argument Summarization via Large Language Diffusion Models</div>
-                <div class="paper-authors"><span class="me">Hao Li</span>, Yizheng Sun, Viktor Schlegel, Kailai Yang, et al.</div>
+                <div class="paper-authors"><span class="me">Hao Li</span>, Yizheng Sun, Viktor Schlegel, Kailai Yang, Riza Batista-Navarro, Goran Nenadic</div>
                 <div class="paper-venue">ACL 2026</div>
                 <div>[<a href="https://arxiv.org/abs/2507.19081">Paper</a>]</div> 
             </div>
 
             <div class="paper">
                 <div class="paper-title">Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training</div>
-                <div class="paper-authors">Kailai Yang, Xiao Liu, Lei Ji, <span class="me">Hao Li</span>, Yeyun Gong, et al.</div>
+                <div class="paper-authors">Kailai Yang, Xiao Liu, Lei Ji, <span class="me">Hao Li</span>, Yeyun Gong, Peng Cheng, Mao Yang</div>
                 <div class="paper-venue">ACL 2026</div>
                 <div>[<a href="https://arxiv.org/abs/2507.15640">Paper</a>]</div>
             </div>
 
             <div class="paper">
                 <div class="paper-title">MIRA: Medical Time Series Foundation Model for Real-World Health Data</div>
-                <div class="paper-authors"><span class="me">Hao Li</span>, Bowen Deng, Chang Xu, et al.</div>
+                <div class="paper-authors"><span class="me">Hao Li</span>, Bowen Deng, Chang Xu, Zhiyuan Feng, Viktor Schlegel, Yu-Hao Huang, Yizheng Sun, Jingyuan Sun, Kailai Yang, Yiyao Yu, Jiang Bian</div>
                 <div class="paper-venue">NeurIPS 2025</div>
                 <div>[<a href="https://arxiv.org/abs/2506.07584">Paper</a>] [<a href="https://github.com/microsoft/MIRA">Code</a>] [<a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/119424">Talk</a>]</div>
             </div>
             
             <div class="paper">
-                <div class="paper-title">BRIDGE: Bootstrapping Text to Control Time-Series Generation</div>
-                <div class="paper-authors"><span class="me">Hao Li</span>, Yu-Hao Huang, Chang Xu, et al.</div>
+                <div class="paper-title">BRIDGE: Bootstrapping Text to Control Time-Series Generation via Multi-Agent Optimization</div>
+                <div class="paper-authors"><span class="me">Hao Li</span>, Yu-Hao Huang, Chang Xu, Viktor Schlegel, Renhe Jiang, Riza Batista-Navarro, Goran Nenadic, Jiang Bian</div>
                 <div class="paper-venue">ICML 2025</div>
                 <div>[<a href="https://arxiv.org/pdf/2503.02445">Paper</a>] [<a href="https://github.com/microsoft/TimeCraft">Code</a>] [<a href="https://icml.cc/virtual/2025/poster/43728">Talk</a>]</div>
             </div>
             
             <div class="paper">
-                <div class="paper-title">TarDiff: Target-Oriented Diffusion Guidance for EHR Time Series Generation</div>
-                <div class="paper-authors">Bowen Deng, Chang Xu, <span class="me">Hao Li</span>, et al.</div>
+                <div class="paper-title">TarDiff: Target-Oriented Diffusion Guidance for Synthetic EHR Time Series Generation</div>
+                <div class="paper-authors">Bowen Deng, Chang Xu, <span class="me">Hao Li</span>, Yu-Hao Huang, Min Hou, Jiang Bian</div>
                 <div class="paper-venue">KDD 2025</div>
                 <div>[<a href="https://arxiv.org/pdf/2504.17613">Paper</a>] [<a href="https://github.com/microsoft/TimeCraft">Code</a>] [<a href="https://www.youtube.com/watch?v=tOxo9fGaYhg">Talk</a>]</div>
             </div>
             
             <div class="paper">
                 <div class="paper-title">Does Acceleration Cause Hidden Instability in Vision Language Models?</div>
-                <div class="paper-authors">Yizheng Sun, <span class="me">Hao Li</span>, Chang Xu, et al.</div>
+                <div class="paper-authors">Yizheng Sun, <span class="me">Hao Li</span>, Chang Xu, Hongpeng Zhou, Chenghua Lin, Riza Batista-Navarro, Jingyuan Sun</div>
                 <div class="paper-venue">EMNLP 2025</div>
                 <div>[<a href="https://arxiv.org/abs/2503.06794">Paper</a>]</div>
             </div>
             
             <div class="paper">
                 <div class="paper-title">LVPruning: Language-Guided Vision Token Pruning for MLLMs</div>
-                <div class="paper-authors">Yizheng Sun, Yanze Xin, <span class="me">Hao Li</span>, et al.</div>
+                <div class="paper-authors">Yizheng Sun, Yanze Xin, <span class="me">Hao Li</span>, Jingyuan Sun, Chenghua Lin, Riza Batista-Navarro</div>
                 <div class="paper-venue">NAACL 2025 Findings</div>
                 <div>[<a href="https://arxiv.org/abs/2501.13652">Paper</a>]</div>
             </div>
             
             <div class="paper">
-                <div class="paper-title">Which Side Are You On? Multi-task Dataset for Argument Summarisation</div>
-                <div class="paper-authors"><span class="me">Hao Li</span>, Yuping Wu, Viktor Schlegel, et al.</div>
+                <div class="paper-title">Which Side Are You On? Multi-task Dataset for End-to-End Argument Summarisation</div>
+                <div class="paper-authors"><span class="me">Hao Li</span>, Yuping Wu, Viktor Schlegel, Riza Batista-Navarro, Tharindu Madusanka, Iqra Zahid, Jiayan Zeng, Xiaochi Wang, Xinran He, Yizhi Li, Goran Nenadic</div>
                 <div class="paper-venue">ACL 2024 Findings</div>
                 <div>[<a href="https://arxiv.org/abs/2406.03151">Paper</a>] [<a href="https://github.com/HaoBytes/ArgSum-Dataset">Code</a>]</div>
             </div>
             
             <div class="paper">
-                <div class="paper-title">CIF-Bench: A Chinese Instruction-Following Benchmark</div>
-                <div class="paper-authors">Yizhi Li, Ge Zhang, Xingwei Qu, <span class="me">Hao Li</span>, et al.</div>
+                <div class="paper-title">CIF-Bench: A Chinese Instruction-Following Benchmark for Evaluating LLMs</div>
+                <div class="paper-authors">Yizhi Li, Ge Zhang, Xingwei Qu, Jiali Li, Zhaoqun Li, Zekun Wang, <span class="me">Hao Li</span>, Ruibin Yuan, Yinghao Ma, Kai Zhang, Wangchunshu Zhou, Yiming Liang, Lei Zhang, Lei Ma, Jiajun Zhang, Zuowen Li, Stephen W Huang, Chenghua Lin, Wenhu Chen, Jie Fu</div>
                 <div class="paper-venue">ACL 2024 Findings</div>
                 <div>[<a href="https://arxiv.org/abs/2402.13109">Paper</a>] [<a href="https://github.com/yizhilll/CIF-Bench">Code</a>]</div>
             </div>
             
             <div class="paper">
                 <div class="paper-title">Do You Hear the People Sing? Key Point Analysis via Iterative Clustering</div>
-                <div class="paper-authors"><span class="me">Hao Li</span>, Viktor Schlegel, Riza Batista-Navarro, Goran Nenadic</div>
+                <div class="paper-authors"><span class="me">Hao Li</span>, Viktor Schlegel, Riza Theresa Batista-Navarro, Goran Nenadic</div>
                 <div class="paper-venue">ACL 2023</div>
                 <div>[<a href="https://arxiv.org/abs/2305.16000">Paper</a>] [<a href="https://github.com/HaoBytes/KeyPoint-Analysis">Code</a>]</div>
             </div>
             
             <div class="paper">
                 <div class="paper-title">Not All Quantifiers Are Equal: Probing Transformer-based Language Models</div>
-                <div class="paper-authors">Tharindu Madusanka, Iqra Zahid, <span class="me">Hao Li</span>, et al.</div>
+                <div class="paper-authors">Tharindu Madusanka, Iqra Zahid, <span class="me">Hao Li</span>, Ian Pratt-Hartmann, Riza Batista-Navarro</div>
                 <div class="paper-venue">EMNLP 2023</div>
                 <div>[<a href="https://aclanthology.org/2023.emnlp-main.536/">Paper</a>]</div>
             </div>
@@ -408,7 +346,6 @@
     </section>
 
     <script>
-        // 打字机逻辑
         const words = ["Reinforcement Learning.", "AI Agent."];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
         const typeTarget = document.getElementById("typewriter-text");
@@ -425,12 +362,9 @@
             let speed = isDeleting ? 40 : 100;
 
             if (!isDeleting && charIdx === currentWord.length) {
-                speed = 2000; 
-                isDeleting = true;
+                speed = 2000; isDeleting = true;
             } else if (isDeleting && charIdx === 0) {
-                isDeleting = false;
-                wordIdx++;
-                speed = 500;
+                isDeleting = false; wordIdx++; speed = 500;
             }
             setTimeout(typeLoop, speed);
         }
