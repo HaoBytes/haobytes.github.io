@@ -27,9 +27,9 @@
             top: 0; left: 0;
             width: 100vw; height: 100vh;
             z-index: -1;
-            /* 这里换成了直接的网络链接，一定能加载出来 */
-            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
-                              url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2568&auto=format&fit=crop');
+            /* 👇 关键修改：加上了 ./ 表示从当前目录开始找 */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                              url('./attached/museum-of-new-zealand-te-papa-tongarewa-e-3PPyd1U2g-unsplash.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
