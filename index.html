@@ -5,69 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hao Li - Researcher</title>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
     <style>
         /* =========================================
-           第一部分：3D 引导页 (Splash Screen) 的全局与专有样式
+           全局重置与平滑滚动
            ========================================= */
         * { box-sizing: border-box; }
         
-        body, html {
+        html, body {
             margin: 0; padding: 0;
-            width: 100%; height: 100%;
-            overflow: hidden; /* 初始状态锁定滚动，直到转场完成 */
+            width: 100%;
             background-color: #050505; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
-        #canvas-container {
+        /* =========================================
+           第一部分：固定在底层的艺术画背景
+           ========================================= */
+        .art-background {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
+            top: 0; 
+            left: 0;
+            width: 100vw; 
+            height: 100vh;
+            z-index: -1; /* 永远在最底层 */
+            /* 👇 请将这里的 URL 替换为你自己喜欢的艺术画图片链接或本地路径 (例如: url('attached/my-art.jpg'))
+               目前我放了一张高质量的抽象艺术图作为占位演示。
+               linear-gradient 是为了给图片蒙上一层极淡的黑色，确保白色文字清晰。
+            */
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
+        /* =========================================
+           第二部分：首屏文字介绍区 (透明，允许透出底层背景)
+           ========================================= */
         #hero {
-            position: relative;
-            z-index: 10;
-            width: 100%; height: 100%;
+            height: 100vh; /* 撑满第一屏 */
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start; /* 文字靠左，还原截图风格 */
+            padding-left: 10%; /* 左侧留白 */
+            padding-right: 20px;
             color: #ffffff;
+            position: relative;
         }
 
         #hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 300;
-            letter-spacing: 0.05em;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
             margin: 0 0 15px 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3); /* 增加文字阴影防看不清 */
         }
 
         .role-text {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            color: #dddddd;
-            margin-bottom: 15px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: #eeeeee;
+            margin-bottom: 10px;
+            font-weight: 400;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
         }
 
         .subtitle-container {
-            font-size: 1.1rem;
-            color: #888;
-            margin-bottom: 60px; /* 增加了一点底部间距 */
-            height: 1.5em;
-            letter-spacing: 0.05em;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #cccccc;
             font-weight: 300;
+            height: 1.5em;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
         }
 
         #typewriter-text {
             color: #fff;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .cursor {
@@ -80,35 +94,34 @@
 
         @keyframes blink { 50% { opacity: 0; } }
 
-        /* 新增：向下滚动的提示动画 */
+        /* 向下滚动的箭头提示 */
         .scroll-indicator {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
             animation: bounce 2s infinite;
-            cursor: pointer;
+            pointer-events: none;
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
         }
 
         /* =========================================
-           第二部分：原有的学术个人主页样式 (包裹在 #main-content 内)
+           第三部分：原有的学术个人主页样式
+           (当向下滑动时，这部分会丝滑地盖住底层的画作)
            ========================================= */
-        
         #main-content {
-            position: absolute;
-            top: 100vh; 
-            left: 0;
-            width: 100%;
+            position: relative;
+            z-index: 10; /* 层级高于背景，盖住图片 */
+            background-color: #fdfdf6; /* 米白纸质背景 */
             min-height: 100vh;
-            z-index: 20;
-            background-color: #fdfdf6; 
-            display: none; 
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.15); /* 边缘阴影，增加盖上来的立体感 */
         }
 
         .content-inner {
@@ -117,7 +130,7 @@
             line-height: 1.6;
             max-width: 860px; 
             margin: 0 auto; 
-            padding: 60px 20px 100px 20px; 
+            padding: 80px 20px 100px 20px; 
         }
 
         .content-inner a {
@@ -177,6 +190,7 @@
                 font-size: 2em;
                 text-align: center;
             }
+            #hero { padding-left: 5%; }
         }
 
         .content-inner h2 {
@@ -228,18 +242,16 @@
 </head>
 <body>
 
-    <div id="canvas-container"></div>
+    <div class="art-background"></div>
 
     <section id="hero">
-        <h1>Hi! I'm Hao Li</h1>
-        <div class="role-text">Researcher at ERNIE Team, Baidu</div>
+        <h1>Hi! I'm Hao Li.</h1>
+        <div class="role-text">Researcher at ERNIE Team, Baidu.</div>
         <div class="subtitle-container">
             Specialized in <span id="typewriter-text"></span><span class="cursor">|</span>
         </div>
         
-        <div class="scroll-indicator" id="scrollIndicator">
-            Scroll Down<br><br>↓
-        </div>
+        <div class="scroll-indicator">⌄</div>
     </section>
 
     <section id="main-content">
@@ -457,57 +469,6 @@
     </section>
 
     <script>
-        /** 1. THREE.JS 粒子星空背景 **/
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const count = 3500;
-        const positions = new Float32Array(count * 3);
-
-        for(let i = 0; i < count * 3; i++) {
-            positions[i] = (Math.random() - 0.5) * 12;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.015,
-            color: 0xffffff,
-            transparent: true,
-            opacity: 0.5,
-            blending: THREE.AdditiveBlending
-        });
-
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-        camera.position.z = 3;
-
-        let mouseX = 0, mouseY = 0;
-        window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth) - 0.5;
-            mouseY = (e.clientY / window.innerHeight) - 0.5;
-        });
-
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.0008;
-            particlesMesh.rotation.x += 0.0004;
-            
-            camera.position.x += (mouseX * 1.2 - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY * 1.2 - camera.position.y) * 0.05;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        /** 2. 打字机特效 **/
         const words = ["Reinforcement Learning.", "AI Agent."];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
         const typeTarget = document.getElementById("typewriter-text");
@@ -534,76 +495,6 @@
             setTimeout(typeLoop, speed);
         }
         typeLoop();
-
-        /** 3. 页面丝滑转场 (GSAP) - 滚动触发核心逻辑 **/
-        const hero = document.getElementById('hero');
-        const mainContent = document.getElementById('main-content');
-        const scrollIndicator = document.getElementById('scrollIndicator');
-        let hasTransitioned = false; // 防止动画重复触发
-
-        function triggerTransition() {
-            if (hasTransitioned) return;
-            hasTransitioned = true;
-
-            const tl = gsap.timeline();
-
-            tl.to(hero, {
-                opacity: 0,
-                y: -50,
-                duration: 1,
-                ease: "power3.inOut"
-            })
-            .to(camera.position, {
-                z: -1.5, 
-                duration: 2,
-                ease: "power4.inOut"
-            }, "-=0.8")
-            .set(mainContent, { display: 'block' })
-            .to(mainContent, {
-                top: 0, 
-                duration: 1.2,
-                ease: "expo.out",
-                onComplete: () => {
-                    // 转场完成后，解开页面的滚动锁定
-                    document.body.style.overflowY = 'auto'; 
-                    document.documentElement.style.overflowY = 'auto';
-                }
-            }, "-=1.0");
-        }
-
-        // 监听鼠标滚轮 (桌面端)
-        window.addEventListener('wheel', (e) => {
-            // e.deltaY > 0 表示用户在向下滚动
-            if (e.deltaY > 0 && !hasTransitioned) {
-                triggerTransition();
-            }
-        });
-
-        // 监听触屏滑动 (移动端)
-        let touchStartY = 0;
-        window.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        });
-
-        window.addEventListener('touchmove', (e) => {
-            if (hasTransitioned) return;
-            let touchEndY = e.touches[0].clientY;
-            // 判断手指是否向上滑动 (页面向下滚动)
-            if (touchStartY - touchEndY > 30) { 
-                triggerTransition();
-            }
-        });
-
-        // 依然保留点击文字也能触发，为了兼容没有滚轮的用户
-        scrollIndicator.addEventListener('click', triggerTransition);
-
-        // 窗口尺寸自适应
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
     </script>
 </body>
 </html>
