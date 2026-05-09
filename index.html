@@ -195,27 +195,85 @@
         .me { text-decoration: underline; font-weight: 600; }
 
         /* =========================================
-           5. 博客区设计规范
+           5. 博客卡片区设计规范 (横向滑动)
            ========================================= */
-        .blog-post {
-            margin-bottom: 35px;
+        .blog-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0 30px 0;
+            /* 开启滚动吸附，滑动更平滑 */
+            scroll-snap-type: x mandatory;
+            /* 隐藏滚动条但保留功能 (Chrome/Safari/Edge) */
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
         }
-        
-        .blog-title {
-            font-size: 1.15em;
+        .blog-carousel::-webkit-scrollbar {
+            display: none; 
+        }
+
+        .blog-card {
+            /* 每张卡片固定宽度，保证能露出版边提示可滑动 */
+            flex: 0 0 300px; 
+            scroll-snap-align: start;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid #eaeaea;
+            background-color: #f5f5f5; /* 图片未加载时的底色 */
+        }
+
+        .blog-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-title {
+            font-size: 1.1em;
             font-weight: bold;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+            font-family: 'Inter', sans-serif;
         }
         
+        /* 覆盖全局 a 标签的下划线样式 */
+        .content-inner .blog-card-title a {
+            color: #1a1a1a;
+            border-bottom: none;
+            text-decoration: none;
+        }
+        .content-inner .blog-card-title a:hover {
+            color: #0056b3;
+        }
+
         .blog-meta {
             color: #666;
             font-size: 0.85em;
-            margin-top: 6px;
-            font-family: 'Inter', -apple-system, sans-serif;
+            margin-bottom: 12px;
+            font-family: 'Inter', sans-serif;
             display: flex;
             align-items: center;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
-        
+
         .blog-tag {
             display: inline-block;
             padding: 2px 8px;
@@ -223,14 +281,33 @@
             border: 1px solid #e0e0e0;
             border-radius: 4px;
             color: #555;
-            font-weight: 500;
+            font-size: 0.9em;
+        }
+
+        .blog-card-excerpt {
+            color: #444;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            /* 限制摘要行数为3行，多出部分显示省略号 */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
-        .blog-excerpt {
-            color: #444;
-            margin-top: 10px;
-            font-size: 0.95em;
-            line-height: 1.6;
+        .blog-read-more a {
+            margin-top: auto;
+            font-size: 0.9em;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            border-bottom: none !important;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-card {
+                flex: 0 0 260px; /* 移动端卡片稍微变窄 */
+            }
         }
     </style>
 </head>
@@ -269,33 +346,89 @@
                 <img src="attached/myself.jpg" alt="My Photo" class="profile-photo">
             </div>
 
-            <!-- 博客展示区开始 -->
-            <h2>Blog & Notes</h2>
+            <h2>Blog</h2>
+            
+            <div class="blog-carousel">
+                <div class="blog-card">
+                    <img src="attached/ernie-5.1-cover.jpg" alt="ERNIE 5.1 Release" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">
+                            <a href="https://yiyan.baidu.com/blog/posts/ernie-5.1-0508-release/" target="_blank">ERNIE 5.1: The Next Generation Foundation Model</a>
+                        </h3>
+                        <div class="blog-meta">
+                            <span>May 8, 2026</span>
+                            <span class="blog-tag">LLM Release</span>
+                        </div>
+                        <div class="blog-card-excerpt">
+                            Announcing the release of ERNIE 5.1. Exploring the latest advancements in post-training, reinforcement learning, and our continued scaling efforts.
+                        </div>
+                        <div class="blog-read-more">
+                            <a href="https://yiyan.baidu.com/blog/posts/ernie-5.1-0508-release/" target="_blank">Read post →</a>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="blog-post">
-                <div class="blog-title"><a href="#">Summarizing Industrial RL Experiences: Navigating Multi-Reward Optimization</a></div>
-                <div class="blog-meta">
-                    <span>May 2026</span>
-                    <span class="blog-tag">Reinforcement Learning</span>
-                    <span class="blog-tag">Infrastructure</span>
+                <div class="blog-card">
+                    <img src="attached/blog-placeholder-1.jpg" alt="Blog Image" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title"><a href="#">Navigating Multi-Reward Optimization in Production</a></h3>
+                        <div class="blog-meta">
+                            <span>Apr 2026</span>
+                            <span class="blog-tag">Reinforcement Learning</span>
+                        </div>
+                        <div class="blog-card-excerpt">
+                            Reflections on scaling RL strategies. Discussing techniques for multi-reward fusion and mitigating reward hacking on large GPU clusters.
+                        </div>
+                        <div class="blog-read-more"><a href="#">Read post →</a></div>
+                    </div>
                 </div>
-                <div class="blog-excerpt">
-                    Reflections on scaling reinforcement learning strategies in production. Discussing techniques for multi-reward fusion, mitigating reward hacking, and the engineering challenges of scheduling large-scale GPU clusters for high-frequency iteration.
-                </div>
-            </div>
 
-            <div class="blog-post">
-                <div class="blog-title"><a href="#">A Two-Phase Methodology for Medical AI: Capability Boundaries and Alignment</a></div>
-                <div class="blog-meta">
-                    <span>Feb 2026</span>
-                    <span class="blog-tag">Healthcare AI</span>
-                    <span class="blog-tag">Differential Privacy</span>
+                <div class="blog-card">
+                    <img src="attached/blog-placeholder-2.jpg" alt="Blog Image" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title"><a href="#">A Two-Phase Methodology for Medical Foundation Models</a></h3>
+                        <div class="blog-meta">
+                            <span>Feb 2026</span>
+                            <span class="blog-tag">Healthcare AI</span>
+                        </div>
+                        <div class="blog-card-excerpt">
+                            Why the first training phase must expand capability boundaries aggressively, while the second focuses on privacy-constrained alignment.
+                        </div>
+                        <div class="blog-read-more"><a href="#">Read post →</a></div>
+                    </div>
                 </div>
-                <div class="blog-excerpt">
-                    Exploring the training paradigms for medical foundation models. This post details why the first training phase must focus on aggressively expanding capability boundaries, while the second phase ensures strict privacy-constrained alignment.
+
+                <div class="blog-card">
+                    <img src="attached/blog-placeholder-3.jpg" alt="Blog Image" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title"><a href="#">TimeCraft: Universal Time-Series Generation Engine</a></h3>
+                        <div class="blog-meta">
+                            <span>Jan 2026</span>
+                            <span class="blog-tag">Time-Series</span>
+                        </div>
+                        <div class="blog-card-excerpt">
+                            A deep dive into the architecture behind TimeCraft and how controllable generation is reshaping medical and financial data analysis.
+                        </div>
+                        <div class="blog-read-more"><a href="#">Read post →</a></div>
+                    </div>
                 </div>
+
+                <div class="blog-card">
+                    <img src="attached/blog-placeholder-4.jpg" alt="Blog Image" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title"><a href="#">Building the DeepAM Infrastructure</a></h3>
+                        <div class="blog-meta">
+                            <span>Nov 2025</span>
+                            <span class="blog-tag">Open Source</span>
+                        </div>
+                        <div class="blog-card-excerpt">
+                            Introduction to our new open-source argument mining infrastructure designed for the research community.
+                        </div>
+                        <div class="blog-read-more"><a href="#">Read post →</a></div>
+                    </div>
+                </div>
+
             </div>
-            <!-- 博客展示区结束 -->
 
             <h2>Selected Work</h2>
 
